@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pentagon VR Museum</title>
+<script src="https://cdn.jsdelivr.net/npm/meshoptimizer@0.20.0/meshopt_decoder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+<script>
+MeshoptDecoder.ready.then(() => {
+  THREE.MeshoptDecoder = MeshoptDecoder;
+});
+</script>
+<script>
+        /* ===============================
+       TELEPORT
+    =============================== */
+    AFRAME.registerComponent('teleport', {
+      init: function () {
+        this.el.addEventListener('click', () => {
+          const target = this.el.getAttribute('data-target');
+          if (target) {
+            const isVR = this.el.sceneEl.is('vr-mode');
+            const finalURL = isVR ? target + "?vr=true" : target;
+            window.location.href = finalURL;
+          } else {
+            const rig = document.querySelector('#rig');
+            const p = this.el.getAttribute('position');
+            rig.setAttribute('position', { x: p.x, y: 2, z: p.z });
+          }
+        });
+      }
+    });
+    /*================================
+    DOOR FOCUS  
+    ================================*/
+    AFRAME.registerComponent('door-focus', {
+    schema: {
+        targetx: {type: 'number'},
+        targetz: {type: 'number'}
+    },
+    init: function () {
+        let timer;
+        this.el.addEventListener('mouseenter', () => {
+            timer = setTimeout(() => {
+                const rig = document.querySelector('#rig');
+                rig.setAttribute('position', {
+                    x: this.data.targetx,
+                    y: 3, // Keep the current Y position for a smoother transition  
+                    z: this.data.targetz
+                });
+            }, 2000); // 2 seconds
+        });
+        this.el.addEventListener('mouseleave', () => {
+            clearTimeout(timer);
+        });
+    }
+});
+AFRAME.registerComponent('video-gaze', {
+  init: function () {
+    const video = document.querySelector('#museumVideo');
+    let timer;
+    this.el.addEventListener('mouseenter', () => {
+      timer = setTimeout(() => {
+        video.muted = false;   // enable sound
+        video.play();
+      },1500);
+    });
+    this.el.addEventListener('mouseleave', () => {
+      clearTimeout(timer);
+      video.pause();
+    });
+  }
+});
+AFRAME.registerComponent('gate-focus', {
+  schema: {
+    targetx: {type: 'number'},
+    targetz: {type: 'number'}
+  },
+
+  init: function () {
+    this.el.addEventListener('click', () => {
+      const rig = document.querySelector('#rig');
+      rig.setAttribute('position', {
+        x: this.data.targetx,
+        y: rig.object3D.position.y,
+        z: this.data.targetz
+      });
+    });
+  }
+});
+</script>
+</script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+  <a-asset-item id="deshpandeStatue" src="statuedeshpande-v3.glb"></a-asset-item>
+  <a-asset-item id="tree" src="tree.glb"></a-asset-item>
+</a-assets>
+<a-assets>
+   <img id="wooddesign" src="wooddesign.jpg">
+   <img id="gate" src="gate3-removebg-preview.png">
+   <img id="compound" src="wall1.jpg"> 
+   <img id="window" src="window2.png">
+   <img id="innerroom" src="texture-white-bricks.jpg">
+   <img id="floorTexture" src="floor1.jpg">
+   <img id="brickWall" src="redbrick.jpg">
+   <img id="gandhi" src="gandhi.jpg">
+   <img id="door" src="door1.jpeg">
+   <img id="lawn" src="lawn.jpg">
+   <img id="paver" src="paver.jpg">
+   <video id="video1" src="Video Project (1).mp4" autoplay loop muted></video>
+   <video id="museumVideo" src="videoplayback.mp4" loop playsinline webkit-playsinline preload="auto" material="shader: flat" crossorigin="anonymous"></video>
+</a-assets>
+
+<!--COMPOUND WALL & GATE-->
+<!-- FRONT WALL (with gap for gate) -->
+<a-box position="80 6 180"
+width="140"
+height="16"
+depth="1"
+material="src:#compound; repeat: 1 1">
+</a-box>
+<a-box position="-80 6 180"
+width="140"
+height="16"
+depth="1"
+material="src:#compound; repeat: 1 1">
+</a-box>
+<a-entity
+gltf-model="#tree"
+position="50 -2 145"
+rotation="0 -60 0"
+scale="0.1 0.1 0.1">
+</a-entity>
+<a-entity
+gltf-model="#tree"
+position="-50 -2 145"
+rotation="0 -60 0"
+scale="0.1 0.1 0.1">
+</a-entity>
+<!--GATE-->
+<a-plane 
+  position="0 7 180"
+  width="22.5"
+  height="17"
+  rotation="0 180 0"
+  class="clickable"
+  gate-focus="targetx:0; targetz:130"
+  material="src:#gate; side:double; transparent:true">
+</a-plane>
+<!-- BACK WALL -->
+<a-box position="0 6 -180"
+width="300"
+height="16"
+depth="1"
+material="src:#compound; repeat: 1 1">
+</a-box>
+<!-- LEFT WALL -->
+<a-box position="-150 6 0"
+rotation="0 90 0"
+width="360"
+height="16"
+depth="1"
+material="src:#compound; repeat: 1 1">
+</a-box>
+<!-- RIGHT WALL -->
+<a-box position="150 6 0"
+rotation="0 90 0"
+width="360"
+height="16"
+depth="1"
+material="src:#compound; repeat: 1 1">
+</a-box>
+
+<!--LAWN-->
+<a-plane
+rotation="-90 0 0"
+position="0 -0.05 120"
+width="300"
+height="200"
+src="#lawn"
+repeat="40 40"
+material="roughness:1">
+</a-plane>
+
+<a-plane
+rotation="-90 -144 0"
+position="75 -0.02 91.5"
+width="120"
+height="70"
+src="#lawn"
+repeat="12 10"
+material="roughness:1; metalness:0">
+</a-plane>
+
+<!-- LAWN COVER FOR WALL 2 -->
+<a-plane
+rotation="-90 144 0"
+position="-75 -0.02 91.5"
+width="120"
+height="70"
+src="#lawn"
+repeat="12 10"
+material="roughness:1; metalness:0">
+</a-plane>
+<!-- LAWN COVER FOR WALL 3 -->
+<a-plane
+src="#lawn"
+rotation="-90 -120 0"
+width="170"
+height="43.5"
+position="78 0.03 88"
+material="repeat:12 10">
+</a-plane>
+<!-- LAWN COVER FOR WALL 5 -->
+<a-plane
+src="#lawn"
+rotation="-90 120 0"
+width="170"
+height="43.5"
+position="-78 0.03 88"
+material="repeat:12 10">
+</a-plane>
+
+<!-- PAVER PATH -->
+<a-plane
+rotation="-90 0 0"
+position="0 0.01 134"
+width="11.5"
+height="90"
+src="#paver"
+repeat="4 20"
+material="roughness:1">
+</a-plane>
+
+<a-entity
+gltf-model="#deshpandeStatue"
+position="15 5 110"
+rotation="0 -60 0"
+scale="10 10 10">
+</a-entity>
+<!-- Sky -->
+<a-sky color="#ECECEC"></a-sky>
+
+<!-- DOOR -->
+<a-box
+src="#door"
+width="12"
+height="15"
+depth="2"
+position="0 7 90.2"
+rotation="0 0 0"
+class="clickable"
+material="side:double"
+door-focus="targetx:0; targety:4; targetz:75">
+</a-box>
+
+<!--DOOR DESIGN-->
+<a-triangle
+  color="#654321"
+  vertex-a="-7.5 14.6 91"
+  vertex-b="7.5 14.6 91"
+  vertex-c="0 18 91"
+  material="src:#wooddesign">
+</a-triangle>
+
+<!-- Left Pillar -->
+<a-box 
+  position="-6.5 6 90.7"
+  width="2"
+  height="17"
+  depth="1.5"
+  material="src:#wooddesign">
+</a-box>
+
+<!-- Right Pillar -->
+<a-box 
+  position="6.5 6 90.7"
+  width="2"
+  height="17"
+  depth="1.5"
+  material="src:#wooddesign">
+</a-box>
+<a-box position="-6 0.1 134" width="0.5" height="0.3" depth="86" color="#999"></a-box>
+<a-box position="6 0.1 134" width="0.5" height="0.3" depth="86" color="#999"></a-box>
+
+<!-- Lighting -->
+<a-light type="ambient" intensity="0.5"></a-light>
+<a-light type="directional" position="20 30 10" intensity="0.5"></a-light>
+
+<!-- Large Floor -->
+<a-plane
+rotation="-90 90 0"
+position="0 0 -13"
+width="205"
+height="205"
+src="#floorTexture"
+repeat="20 20"
+material="roughness:1">
+</a-plane>
+
+<!--HEXAGONAL CEILING-->
+<a-triangle 
+  color="#FFFDD0"
+  material="side: double"
+  vertex-a="-52 22 -90"   
+  vertex-b="52 22 -90"    
+  vertex-c="0 55 0">      
+</a-triangle>
+<a-triangle 
+  color="#FFFDD0"
+  material="side: double"
+  vertex-a="53 22 90"
+  vertex-b="-53 22 90"
+  vertex-c="0 55 0">
+</a-triangle>
+<a-entity position="78 0 -45" rotation="0 -60 0">
+  <a-triangle 
+    color="#FFFDD0"
+    material="side: double"
+    vertex-a="-53 22 0"
+    vertex-b="53 22 0"
+    vertex-c="0 55 90">
+  </a-triangle>
+</a-entity>
+<a-entity position="78 0 45" rotation="0 -120 0">
+  <a-triangle 
+    color="#FFFDD0"
+    material="side: double"
+    vertex-a="-52 22 0"
+    vertex-b="52 22 0"
+    vertex-c="0 55 90">
+  </a-triangle>
+</a-entity>
+<a-entity position="-78 0 45" rotation="0 120 0">
+  <a-triangle 
+    color="#FFFDD0"
+    material="side: double"
+    vertex-a="-52 22 0"
+    vertex-b="52 22 0"
+    vertex-c="0 55 90">
+  </a-triangle>
+</a-entity>
+<a-entity position="-78 0 -45" rotation="0 60 0">
+  <a-triangle 
+    color="#FFFDD0"
+    material="side: double"
+    vertex-a="-53 22 0"
+    vertex-b="53 22 0"
+    vertex-c="0 55 90">
+  </a-triangle>
+</a-entity>
+
+<!-- CAMERA RIG -->
+    <a-entity id="rig" position="0 4 70" wasd-controls>
+  <a-entity camera look-controls position="0 3 0" rotation="0 180 0">
+        <a-cursor fuse="true" fuse-timeout="2000" raycaster="objects: .clickable"
+          wasd-controls-enabled="true"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #fff; shader: flat"
+          animation__fusing="property: geometry.radiusInner; from: 0.02; to: 0.001; dur: 2000; startEvents: fusing"
+          animation__mouseleave="property: geometry.radiusInner; to: 0.02; dur: 200; startEvents: mouseleave">
+        </a-cursor>
+      </a-entity>
+    </a-entity>
+<!--NAVIGATION POINTS-->
+      <!-- 1st wall Teleport Pad -->
+      <a-cylinder position="0 0.05 75" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!-- 2nd wall Teleport Pad -->
+      <a-cylinder position="-35 0.05 65" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="-50 0.05 30" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="-60 0.05 10" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!-- 3rd wall Teleport Pad -->
+      <a-cylinder position="-50 0.05 -30" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="-40 0.05 -60" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="-60 0.05 -20" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!--4th wall Teleport Pad -->
+      <a-cylinder position="0 0.05 -50" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!-- 5th wall Teleport Pad -->
+      <a-cylinder position="50 0.05 -30" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="40 0.05 -50" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="60 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!-- 6th wall Teleport Pad -->
+      <a-cylinder position="50 0.05 40" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="40 0.05 60" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <a-cylinder position="60 0.05 20" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!--centre room Teleport Pad -->
+      <a-cylinder position="0 0.05 20" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!-- Left Side Statue -->
+      <a-cylinder position="-35 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+      <!-- Right Side Statue -->
+      <a-cylinder position="35 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
+
+
+<!--MUSEUM WALLS-->
+<!-- WALL 1 (BACK SMALL WALL) -->
+<a-box position="0 10 90"
+rotation="0 180 0"
+width="104"
+height="25"
+depth="1"
+material="src:#brickWall; repeat:2 1">
+</a-box>
+
+<!-- WINDOW (FIXED) -->
+<a-plane
+  src="#window"
+  position="27 8 91"  
+  width="10"
+  height="10"
+  rotation="0 180 0"
+  material="side: double; transparent: true">
+</a-plane>
+
+<!-- WINDOW (FIXED) -->
+<a-plane
+  src="#window"
+  position="-27 8 91"  
+  width="10"
+  height="10"
+  rotation="0 180 0"
+  material="side: double; transparent: true">
+</a-plane>
+<!-- WALL 2 -->
+<a-box position="-78 10 45"
+rotation="0 120 0"
+width="103"
+height="25"
+depth="1"
+material="src:#brickWall; repeat:3 1">
+</a-box>
+<!-- WALL 3 -->
+<a-box position="-78 10 -45"
+rotation="0 60 0"
+width="106"
+height="25"
+depth="1"
+material="src:#brickWall; repeat:3 1">
+</a-box>
+<!-- WALL 4 (FRONT SMALL WALL) -->
+<a-box position="0 10 -90"
+rotation="0 0 0"
+width="104"
+height="25"
+depth="1"
+material="src:#brickWall; repeat:2 1">
+</a-box>
+<a-video
+src="#museumVideo"
+class="clickable"
+video-gaze
+position="0 10 -88"
+width="70"
+height="18"
+rotation="0 0 0"
+material="shader:flat"
+sound="src:#museumVideo; positional:true; volume:2">
+</a-video>
+<!-- WALL 5 -->
+<a-box position="78 10 -45"
+rotation="0 -60 0"
+width="106"
+height="25"
+depth="1"
+material="src:#brickWall; repeat:3 1">
+</a-box>
+<!-- WALL 6 -->
+<a-box position="78 10 45"
+rotation="0 -120 0"
+width="103"
+height="25"
+depth="1"
+material="src:#brickWall; repeat:3 1">
+</a-box>
+
+<!-- Museum Sign -->
+<a-text
+value="MUSEUM"
+position="0 15.5 91.2"
+align="center"
+color="black"
+width="30">
+</a-text>
+
+<a-light type="ambient" intensity="0.5"></a-light>
+<a-light type="directional" position="0 10 5" intensity="1.2"></a-light>
+
+<!-- ===================== -->
+<!-- CENTER ARTIFACT ZONE -->
+<!-- ===================== -->
+
+<a-cylinder position="-25 1 -10"
+            radius="3"
+            height="3"
+            color="#FFFFFF"></a-cylinder>
+
+<a-sphere position="-25 6 -10"
+          radius="3"
+          color="#888"></a-sphere>
+
+
+<a-cylinder position="25 1 -10"
+            radius="3"
+            height="3"
+            color="#FFFFFF"></a-cylinder>
+
+<a-sphere position="25 6 -10"
+          radius="3"
+          color="#888"></a-sphere>
+
+
+
+          <!-- INNER ARTIFACT ROOM (OPEN FRONT) -->
+
+            <!-- Back Wall -->
+            <a-box position="0 6 -30"
+            rotation="0 0 0"
+            width="40"
+            height="12"
+            depth="1"
+            src="#innerroom"
+            repeat="1 1"
+            >
+            </a-box>
+
+            <!-- Left Wall -->
+            <a-box position="-20 6 -10"
+            rotation="0 90 0"
+            width="40"
+            height="12"
+            depth="1"
+            src="#innerroom"
+            repeat="1 1">
+            </a-box>
+
+            <!-- Right Wall -->
+            <a-box position="20 6 -10"
+            rotation="0 90 0"
+            width="40"
+            height="12"
+            depth="1"
+            src="#innerroom"
+            repeat="1 1">
+            </a-box>
+
+</a-scene>
+</body>
+</html>
