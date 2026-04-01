@@ -2,12 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Pentagon VR Museum</title>
+<title>Gangadhar Rao Deshpande Virtual Museum</title>
 <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/meshoptimizer@0.20.0/meshopt_decoder.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+
+<script src="https://unpkg.com/aframe-curve-component/dist/aframe-curve-component.min.js"></script>
+
+<script src="https://unpkg.com/aframe-text-curve-component/dist/aframe-text-curve-component.min.js"></script>
 <script>
 MeshoptDecoder.ready.then(() => {
   THREE.MeshoptDecoder = MeshoptDecoder;
@@ -101,6 +105,73 @@ AFRAME.registerComponent('gate-focus', {
   <a-asset-item id="tree" src="tree.glb"></a-asset-item>
 </a-assets>
 <a-assets>
+   <img id ="father" src="father.png">
+   <img id="mother" src="mother.png">
+   <img id="lokmanya" src="lokmanya.png">
+   <img id="govind" src="govind.png">
+   <img id="lokmanya1" src="lokmanya1.png">
+   <img id="lokmanya2" src="lokmanya2.png">
+   <img id="vijaynagar" src="vijaynagar.png">
+   <img id="railway" src="railway.png">
+   <img id="vijaynagar1" src="vijaynagar1.png">
+   <img id="president" src="president.png">
+   <img id="dias" src="dias.png">
+   <img id="ali" src="ali.png">
+   <img id="gandhi1" src="gandhi1.png">
+   <img id="gandhi2" src="gandhi2.png">
+   <img id="gandhi3" src="gandhi3.png">
+   <img id="congress" src="congress.png">
+   <img id="vijaynagar2" src="vijaynagar2.png">
+   <img id="meeting" src="meeting.png">
+   <img id="horse" src="horse.png">
+   <img id="gopura" src="gopura.png">
+   <img id="ali2" src="ali2.png">
+   <img id="bath" src="bath.png">
+   <img id="procession" src="procession.png">
+   <img id="vidyasram" src="vidyashram.png">
+   <img id="congress1" src="congresssession.png">
+   <img id="pavilion" src="pavilion.png">
+   <img id="tondon" src="tondon.png">
+   <img id="madanmaviya" src="madanmaviya.png">
+   <img id="yatra" src="yatra.png">
+   <img id="khadi" src="khadi.png">
+   <img id="cabinet" src="cabinet.png">
+   <img id="research" src="research.png">
+   <img id="walk" src="walk.png">
+   <img id="shramdan" src="shramdan.png">
+   <img id="doctor" src="doctor.png">
+   <img id="sangh" src="sangh.png">
+   <img id="harijan" src="harijan.png">
+   <img id="water" src="water.png">
+   <img id="kumari" src="kumari.png">
+   <img id="potdar" src="potdar.png">
+   <img id="divekar" src="divekar.png">
+   <img id="committee" src="committee.png">
+   <img id="rprasad" src="rprasad.png">
+   <img id="jail" src="jail.png">
+   <img id="yalagi" src="yalagi.png">
+   <img id="katgade" src="katgade.png">
+   <img id="kher" src="kher.png">
+   <img id="bhave" src="bhave.png">
+   <img id="message" src="message.png">
+   <img id="naidu" src="naidu.png">
+   <img id="vinoba" src="vinoba.png">
+   <img id="govinda" src="govinda.png">
+   <img id="rp2" src="rp2.png">
+   <img id="gandhi4" src="gandhi4.png">
+   <img id="rp3" src="rp3.png">
+   <img id="hand" src="hand.png">
+   <img id="hand1" src="hand1.png">
+   <img id="hand2" src="hand2.jpeg">
+   <img id="gang" src="img1.png">
+   <img id="funeral" src="funeral.png">
+   <img id="gandhiji" src="mahatma.png">
+   <img id="prsad" src="prsad.png">
+   <img id="desai" src="desai.png">
+   <img id="bose" src="bose.png">
+   <img id="text" src="text.png">
+   <img id="statue2" src="statue2.png">
+   <img id="statuewall" src="statuewall.jpg">
    <img id="wooddesign" src="wooddesign.jpg">
    <img id="gate" src="gate3-removebg-preview.png">
    <img id="compound" src="wall1.jpg"> 
@@ -114,6 +185,267 @@ AFRAME.registerComponent('gate-focus', {
    <img id="paver" src="paver.jpg">
    <video id="museumVideo" src="video.mp4" loop playsinline webkit-playsinline preload="auto" material="shader: flat" crossorigin="anonymous"></video>
 </a-assets>
+
+<!-- WALL 2 IMAGES -->
+<!--<a-plane src="#img1" position="-56.5 12 80" rotation="0 120 0" width="8" height="8"></a-plane>-->
+<a-plane src="#father" position="-56.5 16.5 80" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-56.5 11.5 80" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Balkrishna Deshpande\nFather of Gangadharrao Deshpande" position="-56 11.5 80" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#mother" position="-56.5 6.5 80" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-56.5 1.5 80" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Deshpande\nMother of Gangadharrao Deshpande" position="-56 1.5 80" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#lokmanya" position="-62 16.5 70" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-62 11.5 70" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande with \nLokmanya Tilak" position="-61.5 11.5 70" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#govind" position="-62 6.5 70" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-62 1.5 70" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Govindrao Yalagi and Gangadharrao" position="-61.5 1.5 70" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#lokmanya1" position="-68 16.5 60" rotation="0 120 0" width="9" height="7"></a-plane>
+<a-plane color="white" position="-68 11.5 60" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Lokmanya Tilak visit \nto Madras." position="-67.5 11.5 60" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#lokmanya2" position="-68 6.5 60" rotation="0 120 0" width="9" height="7"></a-plane>
+<a-plane color="white" position="-68 1.5 60" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande with \nLokmanya Tilak at Banaras" position="-67.5 1.5 60" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#vijaynagar" position="-74 16.5 50" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-74 11.5 50" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="39th Session of Indian \nNational Congress." position="-73.5 11.5 50" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#railway" position="-74 6.5 50" rotation="0 120 0" width="9" height="7"></a-plane>
+<a-plane color="white" position="-74 1.5 50" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Vijaynagar - a flag station specially \narranged by M.S.M. Railway" position="-73.5 1.5 50" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#vijaynagar1" position="-80 16.5 40" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-80 11.5 40" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Pampa Sarovar, popularly known as \nCongress-Well." position="-79.5 11.5 40" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#president" position="-80 6.5 40" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-80 1.5 40" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="President and The Leaders \nprocession on opening day." position="-79.5 1.5 40" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#dias" position="-85 16.5 30" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-85 11.5 30" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Congress President, Mahatma Gandhi \nProceeding towards dias" position="-84.5 11.5 30" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#ali" position="-85 6.5 30" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-85 1.5 30" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Moulana Mohammad Ali leading \nMahatma Gandhi to the dias" position="-84.5 1.5 30" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#gandhi1" position="-91 16.5 20" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-91 11.5 20" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Moulana Mohammad Ali, handing \nover charge to Mahatma Gandhi." position="-90.5 11.5 20" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#gandhi2" position="-91 6.5 20" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-91 1.5 20" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Mahatma Gandhi, addressing the \ngathering after taking over charge" position="-90.5 1.5 20" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#gandhi3" position="-97 16.5 10" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-97 11.5 10" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Evening Prayer by Gandhiji" position="-96.5 11.5 10" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#congress" position="-97 6.5 10" rotation="0 120 0" width="8" height="7"></a-plane>
+<a-plane color="white" position="-97 1.5 10" rotation="0 120 0" width="10" height="1.8"></a-plane>
+<a-text value="Campus of 39th session of \nIndian National Congress" position="-96.5 1.5 10" rotation="0 120 0" align="center" width="12" color="black"></a-text>
+
+<!-- WALL 3 IMAGES -->
+<a-plane src="#vijaynagar2" position="-95 16.5 -13" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-95 11.5 -13" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji coming from Vijayanagara \nStation to attend the session" position="-94.5 11.5 -13" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#meeting" position="-95 6.5 -13" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-95 1.5 -13" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji addressing a public \nmeeting" position="-94.5 1.5 -13" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#horse" position="-90 16.5 -22" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-90 11.5 -22" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande and Pundalikji \nKatagade inspecting the venue of session." position="-89.5 11.5 -22" rotation="0 60 0" align="center" width="11" color="black"></a-text>
+
+<a-plane src="#gopura" position="-90 6.5 -22" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-90 1.5 -22" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gopura, the main entrance to the \nCongress session venue." position="-89.5 1.5 -22" rotation="0 60 0" align="center" width="11" color="black"></a-text>
+
+<a-plane src="#ali2" position="-85 16.5 -30" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-85 11.5 -30" rotation="0 60 0" width="9.5" height="1.8"></a-plane>
+<a-text value="Moulana Mohammad Ali, leading \nGandhiji to the dias." position="-84.5 11.5 -30" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#bath" position="-85 6.5 -30" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-85 1.5 -30" rotation="0 60 0" width="9.5" height="1.8"></a-plane>
+<a-text value="Bathing arrangement during \nthe Congress session." position="-84.5 1.5 -30" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#procession" position="-79 16.5 -40" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-79 11.5 -40" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="President and The Leaders \nprocession on opening day" position="-78.5 11.5 -40" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#vidyasram" position="-79 6.5 -40" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-79 1.5 -40" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="VIDYARANYASHRAM -The President Camp" position="-78.5 1.5 -40" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#congress1" position="-74 16.5 -50" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-74 11.5 -50" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji speaking at Congress \nsession after the flag hosting" position="-73.5 11.5 -50" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#pavilion" position="-74 6.5 -50" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-74 1.5 -50" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Belgaum Congress Gandhiji in \nfront of the pavilion" position="-73.5 1.5 -50" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#tondon" position="-68 16.5 -60" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-68 11.5 -60" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji goes to the session with Mau.Ali, smt.Sarojini Devi \nand Shri Purushottam Das Tondon." position="-67.5 11.5 -60" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#madanmaviya" position="-68 6.5 -60" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-68 1.5 -60" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji with Madanmohan Malaviya\n(Belgaum)" position="-67.5 1.5 -60" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#yatra" position="-62 16.5 -70" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-62 11.5 -70" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji on stage with Gangadharrao deshpande and Bhimrao Ballona \nduring the Untouchability Eradication Yatra." position="-61.5 11.5 -70" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#khadi" position="-62 6.5 -70" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-62 1.5 -70" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji and Kasturba came to \nGulbarga to promote Khadi." position="-61.5 1.5 -70" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#cabinet" position="-56.5 16.5 -80" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-56.5 11.5 -80" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao and Achyut Patwardhan \ndiscussing about first Kher Cabinet. " position="-56 11.5 -80" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#research" position="-56.5 6.5 -80" rotation="0 60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="-56.5 1.5 -80" rotation="0 60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji visited Sir C.V. Raman's \nresearch center in Bangalore." position="-56 1.5 -80" rotation="0 60 0" align="center" width="12" color="black"></a-text>
+
+<!-- WALL 5 IMAGES -->
+<a-plane src="#bhave" position="95 16.5 -13" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="95 11.5 -13" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Vinoba Bhave and \nGangadharrao Deshpande" position="94.5 11.5 -13" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#kher" position="95 6.5 -13" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="95 1.5 -13" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande with \nKhera Family" position="94.5 1.5 -13" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#katgade" position="90 16.5 -22" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="90 11.5 -22" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande with \nR. V. Vadavi and Pundlik Katgade" position="89.5 11.5 -22" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#yalagi" position="90 6.5 -22" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="90 1.5 -22" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao with Jeevanrao and \nKrishnrav Yalagi" position="89.5 1.5 -22" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#jail" position="85 16.5 -30" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="85 11.5 -30" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande with Senapati \nBapat at Hindalaga Jail" position="84.5 11.5 -30" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#rprasad" position="85 6.5 -30" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="85 1.5 -30" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Dr. Rajendraprasad's meet to Gangadharrao \non occasion of his birthday" position="84.5 1.5 -30" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#committee" position="79 16.5 -40" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="79 11.5 -40" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Discussing about State Redevelopment \nCommittee at Gangadharrao's home" position="78.5 11.5 -40" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#divekar" position="79 6.5 -40" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="79 1.5 -40" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao with Swami Anand \nand Rangrao Divekar." position="78.5 1.5 -40" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#potdar" position="74 16.5 -50" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="74 11.5 -50" rotation="0 -60 0" width="10.5" height="1.8"></a-plane>
+<a-text value="Gangadharrao with Hanmantrao Deshpande \nand Bhimrao Potdar." position="73.5 11.5 -50" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#kumari" position="74 6.5 -50" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="74 1.5 -50" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="A woman from Kadar spinning with \nan amber charkha spindle" position="73.5 1.5 -50" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#water" position="68 16.5 -60" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="68 11.5 -60" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="During the Gandhi Seva \nSangh conference" position="67.5 11.5 -60" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#harijan" position="68 6.5 -60" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="68 1.5 -60" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji with Harijan Kariappa \nat Kumari Ashram" position="67.5 1.5 -60" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#sangh" position="62 16.5 -70" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="62 11.5 -70" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="The first day of the Hudali \nGandhi Seva Sangh Sammelan" position="61.5 11.5 -70" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#doctor" position="62 6.5 -70" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="62 1.5 -70" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji talking to a \ndoctor in Hudali" position="61.5 1.5 -70" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#shramdan" position="56.5 16.5 -80" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="56.5 11.5 -80" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Shramadan for the second day \nof the Hudali Conference" position="55.5 11.5 -80" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#walk" position="56.5 6.5 -80" rotation="0 -60 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="56.5 1.5 -80" rotation="0 -60 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji went for an evening \nwalk during the Hudali Conference" position="55.5 1.5 -80" rotation="0 -60 0" align="center" width="12" color="black"></a-text>
+
+<!-- WALL 6 IMAGES -->
+<a-plane src="#message" position="97 16.5 10" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="97 11.5 10" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji's message " position="96.5 11.5 10" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#naidu" position="97 6.5 10" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="97 1.5 10" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Sarojini Naidu" position="96.5 1.5 10" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#vinoba" position="91 16.5 20" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="91 11.5 20" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Vinoba Bhave" position="90.5 11.5 20" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#govinda" position="91 6.5 20" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="91 1.5 20" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Govindrao Yalagi" position="90.5 1.5 20" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#rp2" position="85 16.5 30" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="85 11.5 30" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Babu Rajendra Prasad is spinning on \na four-frame amber charkha." position="84.5 11.5 30" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#gandhi4" position="85 6.5 30" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="85 1.5 30" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji spinning on an \nimproved Gujarati charkha." position="84.5 1.5 30" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#rp3" position="80 16.5 40" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="80 11.5 40" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="General Lal Nehru is expecting a \ntwo-wheeled amber soinning wheel." position="79.5 11.5 40" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#hand" position="80 6.5 40" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="80 1.5 40" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Handwritten texts of \nGangadharrao Deshpande" position="79.5 1.5 40" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#hand1" position="74 16.5 50" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="74 11.5 50" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Handwritten texts of \nGangadharrao Deshpande" position="73.5 11.5 50" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#hand2" position="74 6.5 50" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="74 1.5 50" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Handwritten texts of \nGangadharrao Deshpande" position="73.5 1.5 50" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#gang" position="68 16.5 60" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="68 11.5 60" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande" position="67.5 11.5 60" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#funeral" position="68 6.5 60" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="68 1.5 60" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gangadharrao Deshpande's funeral \nprocession" position="67.5 1.5 60" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#gandhiji" position="62 16.5 70" rotation="0 -120 0" width="9" height="8"></a-plane>
+<a-plane color="white" position="62 11.5 70" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Gandhiji's words about Gangadharrao \nDeshpande" position="61.5 11.5 70" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#prsad" position="62 6.5 70" rotation="0 -120 0" width="9" height="8"></a-plane>
+<a-plane color="white" position="62 1.5 70" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Dr. Rajendraprasad's word about \nGangadharrao Deshpande" position="61.5 1.5 70" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#desai" position="56.5 16.5 80" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="56.5 11.5 80" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Mahadevbai Desai's words about \nGangadharrao Deshpande" position="55.5 11.5 80" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
+
+<a-plane src="#bose" position="56.5 6.5 80" rotation="0 -120 0" width="8" height="8"></a-plane>
+<a-plane color="white" position="56.5 1.5 80" rotation="0 -120 0" width="10" height="1.8"></a-plane>
+<a-text value="Netaji Subhash Chandra Bose's words \nabout Gangadharrao Deshpande" position="55.5 1.5 80" rotation="0 -120 0" align="center" width="12" color="black"></a-text>
 
 <!--COMPOUND WALL & GATE-->
 <!-- FRONT WALL (with gap for gate) -->
@@ -148,7 +480,7 @@ scale="0.1 0.1 0.1">
   height="17"
   rotation="0 180 0"
   class="clickable"
-  gate-focus="targetx:0; targetz:130"
+  gate-focus="targetx:10; targetz:155"
   material="src:#gate; side:double; transparent:true">
 </a-plane>
 <!-- BACK WALL -->
@@ -174,6 +506,37 @@ height="16"
 depth="1"
 material="src:#compound; repeat: 1 1">
 </a-box>
+
+<a-plane 
+  position="0 19 181"
+  width="20"
+  height="10"
+  rotation="0 0 0"
+  material="src:#text; transparent:true">
+</a-plane>
+
+<a-curve id="archCurve">
+
+  <!-- LEFT -->
+  <a-curve-point position="-8.5 11.5 181"></a-curve-point>
+
+  <!-- MID-LEFT -->
+  <a-curve-point position="-4 18.5 181"></a-curve-point>
+
+  <!-- TOP -->
+  <a-curve-point position="0 20 181"></a-curve-point>
+
+  <!-- MID-RIGHT -->
+  <a-curve-point position="4 18.5 181"></a-curve-point>
+
+  <!-- RIGHT -->
+  <a-curve-point position="8.5 11.5 181"></a-curve-point>
+
+</a-curve>
+
+<a-entity position="0 18 179">
+
+</a-entity>
 
 <!--LAWN-->
 <a-plane
@@ -235,10 +598,17 @@ src="#paver"
 repeat="4 20"
 material="roughness:1">
 </a-plane>
+<a-plane
+src="statue2.png"
+position="0 6 42"
+rotation="0 0 0"
+scale="12 12 12"
+material="transparent:true">
+</a-plane>
 
 <a-entity
 gltf-model="#deshpandeStatue"
-position="15 5 110"
+position="15 5 140"
 rotation="0 -60 0"
 scale="10 10 10">
 </a-entity>
@@ -258,14 +628,16 @@ material="side:double"
 door-focus="targetx:0; targetz:75">
 </a-box>
 
-<!--DOOR DESIGN-->
-<a-triangle
-  color="#654321"
-  vertex-a="-7.5 14.6 91"
-  vertex-b="7.5 14.6 91"
-  vertex-c="0 18 91"
-  material="src:#wooddesign">
-</a-triangle>
+<a-cylinder
+  position="0 14.2 91"
+  rotation="0 90 90"
+  radius="7.5"
+  height="2"
+  theta-start="0"
+  theta-length="180"
+  src="#wooddesign"
+  material="side: double">
+</a-cylinder>
 
 <!-- Left Pillar -->
 <a-box 
@@ -288,7 +660,7 @@ door-focus="targetx:0; targetz:75">
 <a-box position="6 0.1 134" width="0.5" height="0.3" depth="86" color="#999"></a-box>
 
 <!-- Lighting -->
-<a-light type="ambient" intensity="0.5"></a-light>
+<a-light type="ambient" intensity="0.3"></a-light>
 <a-light type="directional" position="20 30 10" intensity="0.5"></a-light>
 
 <!-- Large Floor -->
@@ -305,14 +677,14 @@ material="roughness:1">
 <!--HEXAGONAL CEILING-->
 <a-triangle 
   color="#FFFDD0"
-  material="side: double"
+  material="color: #FFFDD0; side: double; shader: flat"
   vertex-a="-52 22 -90"   
   vertex-b="52 22 -90"    
   vertex-c="0 55 0">      
 </a-triangle>
 <a-triangle 
   color="#FFFDD0"
-  material="side: double"
+  material="color: #FFFDD0; side: double; shader: flat"
   vertex-a="53 22 90"
   vertex-b="-53 22 90"
   vertex-c="0 55 0">
@@ -320,7 +692,7 @@ material="roughness:1">
 <a-entity position="78 0 -45" rotation="0 -60 0">
   <a-triangle 
     color="#FFFDD0"
-    material="side: double"
+    material="color: #FFFDD0; side: double; shader: flat"
     vertex-a="-53 22 0"
     vertex-b="53 22 0"
     vertex-c="0 55 90">
@@ -329,7 +701,7 @@ material="roughness:1">
 <a-entity position="78 0 45" rotation="0 -120 0">
   <a-triangle 
     color="#FFFDD0"
-    material="side: double"
+    material="color: #FFFDD0; side: double; shader: flat"
     vertex-a="-52 22 0"
     vertex-b="52 22 0"
     vertex-c="0 55 90">
@@ -338,7 +710,7 @@ material="roughness:1">
 <a-entity position="-78 0 45" rotation="0 120 0">
   <a-triangle 
     color="#FFFDD0"
-    material="side: double"
+    material="color: #FFFDD0; side: double; shader: flat"
     vertex-a="-52 22 0"
     vertex-b="52 22 0"
     vertex-c="0 55 90">
@@ -347,7 +719,7 @@ material="roughness:1">
 <a-entity position="-78 0 -45" rotation="0 60 0">
   <a-triangle 
     color="#FFFDD0"
-    material="side: double"
+    material="color: #FFFDD0; side: double; shader: flat"
     vertex-a="-53 22 0"
     vertex-b="53 22 0"
     vertex-c="0 55 90">
@@ -355,7 +727,7 @@ material="roughness:1">
 </a-entity>
 
 <!-- CAMERA RIG -->
-    <a-entity id="rig" position="0 4 70" wasd-controls>
+    <a-entity id="rig" position="0 4 210" wasd-controls>
   <a-entity camera look-controls position="0 3 0" rotation="0 180 0">
         <a-cursor fuse="true" fuse-timeout="2000" raycaster="objects: .clickable"
           wasd-controls-enabled="true"
@@ -370,35 +742,35 @@ material="roughness:1">
       <a-cylinder position="0 0.05 75" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!-- 2nd wall Teleport Pad -->
-      <a-cylinder position="-35 0.05 65" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="-40 0.05 65" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="-50 0.05 30" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="-50 0.05 45" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="-60 0.05 10" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="-75 0.05 10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!-- 3rd wall Teleport Pad -->
-      <a-cylinder position="-50 0.05 -30" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="-60 0.05 -30" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="-40 0.05 -60" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="-45 0.05 -60" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="-60 0.05 -20" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="-70 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!--4th wall Teleport Pad -->
-      <a-cylinder position="0 0.05 -50" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="0 0.05 -70" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!-- 5th wall Teleport Pad -->
-      <a-cylinder position="50 0.05 -30" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="60 0.05 -30" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="40 0.05 -50" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="45 0.05 -60" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="60 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="75 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!-- 6th wall Teleport Pad -->
-      <a-cylinder position="50 0.05 40" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="55 0.05 40" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="40 0.05 60" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="40 0.05 70" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-      <a-cylinder position="60 0.05 20" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="70 0.05 10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!--centre room Teleport Pad -->
       <a-cylinder position="0 0.05 20" radius="0.5" height="0.3" material="color: blue" teleport
@@ -409,7 +781,8 @@ material="roughness:1">
       <!-- Right Side Statue -->
       <a-cylinder position="35 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
-
+      <a-cylinder position="0 0.05 60" radius="0.5" height="0.3" material="color: blue" teleport
+      class="clickable"></a-cylinder>
 
 <!--MUSEUM WALLS-->
 <!-- WALL 1 (BACK SMALL WALL) -->
@@ -448,6 +821,9 @@ height="25"
 depth="1"
 material="src:#brickWall; repeat:3 1">
 </a-box>
+
+
+
 <!-- WALL 3 -->
 <a-box position="-78 10 -45"
 rotation="0 60 0"
@@ -469,11 +845,11 @@ src="#museumVideo"
 class="clickable"
 video-gaze
 position="0 10 -88"
-width="70"
-height="18"
+width="25"
+height="15"
 rotation="0 0 0"
 material="shader:flat"
-sound="src:#museumVideo; positional:true; volume:2">
+sound="src:#museumVideo; positional:true; mute:true">
 </a-video>
 <!-- WALL 5 -->
 <a-box position="78 10 -45"
@@ -501,12 +877,12 @@ color="black"
 width="30">
 </a-text>
 
-<a-light type="ambient" intensity="0.5"></a-light>
+<a-light type="ambient" intensity="0.3"></a-light>
 <a-light type="directional" position="0 10 5" intensity="1.2"></a-light>
 
 <!-- ===================== -->
 <!-- CENTER ARTIFACT ZONE -->
-<!-- ===================== -->
+<!-- ===================== 
 
 <a-cylinder position="-25 1 -10"
             radius="3"
@@ -525,13 +901,13 @@ width="30">
 
 <a-sphere position="25 6 -10"
           radius="3"
-          color="#888"></a-sphere>
+          color="#888"></a-sphere>-->
 
 
 
-          <!-- INNER ARTIFACT ROOM (OPEN FRONT) -->
+          <!-- INNER ARTIFACT ROOM (OPEN FRONT) 
 
-            <!-- Back Wall -->
+            Back Wall 
             <a-box position="0 6 -30"
             rotation="0 0 0"
             width="40"
@@ -542,7 +918,7 @@ width="30">
             >
             </a-box>
 
-            <!-- Left Wall -->
+            Left Wall 
             <a-box position="-20 6 -10"
             rotation="0 90 0"
             width="40"
@@ -552,7 +928,7 @@ width="30">
             repeat="1 1">
             </a-box>
 
-            <!-- Right Wall -->
+            Right Wall 
             <a-box position="20 6 -10"
             rotation="0 90 0"
             width="40"
@@ -560,7 +936,34 @@ width="30">
             depth="1"
             src="#innerroom"
             repeat="1 1">
-            </a-box>
+            </a-box>-->
+
+<!-- CORNER TO APEX LINES -->
+
+<a-entity line="start: -52 22 -90; end: 0 50 0; color: black"></a-entity>
+<a-entity line="start: 52 22 -90; end: 0 50 0; color: black"></a-entity>
+
+<a-entity line="start: 78 22 -45; end: 0 50 0; color: black"></a-entity>
+<a-entity line="start: 78 22 45; end: 0 50 0; color: black"></a-entity>
+
+<a-entity line="start: 52 22 90; end: 0 50 0; color: black"></a-entity>
+<a-entity line="start: -52 22 90; end: 0 50 0; color: black"></a-entity>
+
+<a-entity line="start: -78 22 45; end: 0 50 0; color: black"></a-entity>
+<a-entity line="start: -78 22 -45; end: 0 50 0; color: black"></a-entity>
+
+
+<a-cylinder
+  position="0 6 45"
+  radius="12"
+  height="16"
+  theta-start="0"
+  theta-length="180"
+  open-ended="true"
+  rotation="0 90 0"
+  material="src:#innerroom; side: double">
+</a-cylinder>
+
 
 </a-scene>
 </body>
