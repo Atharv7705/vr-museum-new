@@ -18,6 +18,30 @@ MeshoptDecoder.ready.then(() => {
 });
 </script>
 <script>
+AFRAME.registerComponent('brown-statue', {
+  init: function () {
+    this.el.addEventListener('model-loaded', () => {
+      const mesh = this.el.getObject3D('mesh');
+      mesh.traverse((node) => {
+        if (node.isMesh) {
+
+          // 🎨 LIGHT BROWN COLOR
+          node.material.color.set('#FDFBD4');  
+
+          // ✨ REMOVE SHINY LOOK
+          node.material.metalness = 0.0;   // no metal
+          node.material.roughness = 1.0;   // fully matte
+
+          // 🔥 IMPORTANT (removes plastic shine)
+          node.material.envMapIntensity = 0;
+
+        }
+      });
+    });
+  }
+});
+</script>
+<script>
         /* ===============================
        TELEPORT
     =============================== */
@@ -102,6 +126,7 @@ AFRAME.registerComponent('gate-focus', {
 <a-scene>
     <a-assets>
   <a-asset-item id="deshpandeStatue" src="statuedeshpande-v3.glb"></a-asset-item>
+  <a-asset-item id="deshpandeStatue2" src="statue2.glb"></a-asset-item>
   <a-asset-item id="tree" src="tree.glb"></a-asset-item>
 </a-assets>
 <a-assets>
@@ -170,13 +195,10 @@ AFRAME.registerComponent('gate-focus', {
    <img id="desai" src="desai.png">
    <img id="bose" src="bose.png">
    <img id="text" src="text.png">
-   <img id="statue2" src="statue2.png">
-   <img id="statuewall" src="statuewall.jpg">
    <img id="wooddesign" src="wooddesign.jpg">
    <img id="gate" src="gate3-removebg-preview.png">
    <img id="compound" src="wall1.jpg"> 
    <img id="window" src="window2.png">
-   <img id="innerroom" src="texture-white-bricks.jpg">
    <img id="floorTexture" src="floor1.jpg">
    <img id="brickWall" src="redbrick.jpg">
    <img id="gandhi" src="gandhi.jpg">
@@ -598,13 +620,21 @@ src="#paver"
 repeat="4 20"
 material="roughness:1">
 </a-plane>
-<a-plane
-src="statue2.png"
-position="0 6 42"
+<a-entity
+gltf-model="#deshpandeStatue2"
+position="0 8 42"
 rotation="0 0 0"
 scale="12 12 12"
-material="transparent:true">
-</a-plane>
+brown-statue>
+</a-entity>
+
+<a-cylinder
+  position="0 0.75 42"
+  radius="4"
+  height="1.5"
+  color="#d9d3c5"
+  material="roughness: 1; metalness: 0">
+</a-cylinder>
 
 <a-entity
 gltf-model="#deshpandeStatue"
@@ -619,42 +649,31 @@ scale="10 10 10">
 <a-box
 src="#door"
 width="12"
-height="15"
+height="18.5"
 depth="2"
-position="0 7 90.2"
+position="0 9 90.2"
 rotation="0 0 0"
 class="clickable"
 material="side:double"
 door-focus="targetx:0; targetz:75">
 </a-box>
 
-<a-cylinder
-  position="0 14.2 91"
-  rotation="0 90 90"
-  radius="7.5"
-  height="2"
-  theta-start="0"
-  theta-length="180"
-  src="#wooddesign"
-  material="side: double">
-</a-cylinder>
-
 <!-- Left Pillar -->
 <a-box 
-  position="-6.5 6 90.7"
+  position="-6.5 9 90.7"
   width="2"
-  height="17"
+  height="18.5"
   depth="1.5"
-  material="src:#wooddesign">
+  color="#F5F5DC">
 </a-box>
 
 <!-- Right Pillar -->
 <a-box 
-  position="6.5 6 90.7"
+  position="6.5 9 90.7"
   width="2"
-  height="17"
+  height="18.5"
   depth="1.5"
-  material="src:#wooddesign">
+  color="#F5F5DC">
 </a-box>
 <a-box position="-6 0.1 134" width="0.5" height="0.3" depth="86" color="#999"></a-box>
 <a-box position="6 0.1 134" width="0.5" height="0.3" depth="86" color="#999"></a-box>
@@ -773,7 +792,7 @@ material="roughness:1">
       <a-cylinder position="70 0.05 10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!--centre room Teleport Pad -->
-      <a-cylinder position="0 0.05 20" radius="0.5" height="0.3" material="color: blue" teleport
+      <a-cylinder position="0 0.05 10" radius="0.5" height="0.3" material="color: blue" teleport
       class="clickable"></a-cylinder>
       <!-- Left Side Statue -->
       <a-cylinder position="-35 0.05 -10" radius="0.5" height="0.3" material="color: blue" teleport
@@ -793,7 +812,33 @@ height="25"
 depth="1"
 material="src:#brickWall; repeat:2 1">
 </a-box>
+<!-- LEFT PILLAR -->
+<a-box 
+  position="-52 10 91" 
+  width="4" 
+  height="25" 
+  depth="1" 
+  color="#F5F5DC">
+</a-box>
 
+<!-- TOP HORIZONTAL PILLAR -->
+<a-box 
+  position="0 20.5 91" 
+  width="101" 
+  height="4" 
+  depth="1" 
+  color="#EEE8D5"
+  material="roughness:1; metalness:0">
+</a-box>
+
+<!-- RIGHT PILLAR -->
+<a-box 
+  position="52 10 91" 
+  width="4" 
+  height="25" 
+  depth="1" 
+  color="#F5F5DC">
+</a-box>
 <!-- WINDOW (FIXED) -->
 <a-plane
   src="#window"
@@ -821,8 +866,6 @@ height="25"
 depth="1"
 material="src:#brickWall; repeat:3 1">
 </a-box>
-
-
 
 <!-- WALL 3 -->
 <a-box position="-78 10 -45"
@@ -870,11 +913,12 @@ material="src:#brickWall; repeat:3 1">
 
 <!-- Museum Sign -->
 <a-text
-value="MUSEUM"
-position="0 15.5 91.2"
+value="Gangadhar Rao Deshpande Virtual Museum"
+position="0 20.5 92"
 align="center"
 color="black"
-width="30">
+width="40"
+font="https://cdn.aframe.io/fonts/mozillavr.fnt">
 </a-text>
 
 <a-light type="ambient" intensity="0.3"></a-light>
@@ -954,14 +998,15 @@ width="30">
 
 
 <a-cylinder
-  position="0 6 45"
-  radius="12"
+  position="0 8 45"
+  radius="25"
   height="16"
   theta-start="0"
   theta-length="180"
   open-ended="true"
   rotation="0 90 0"
-  material="src:#innerroom; side: double">
+  color="white"
+  material="side: double">
 </a-cylinder>
 
 
