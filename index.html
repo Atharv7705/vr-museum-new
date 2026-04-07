@@ -56,7 +56,7 @@ AFRAME.registerComponent('brown-statue', {
           } else {
             const rig = document.querySelector('#rig');
             const p = this.el.getAttribute('position');
-            rig.setAttribute('position', { x: p.x, y: 5, z: p.z });
+            rig.setAttribute('position', { x: p.x, y: 7, z: p.z });
           }
         });
       }
@@ -212,11 +212,12 @@ AFRAME.registerComponent('gate-focus', {
 <a-plane src="#father" position="-56.5 16.5 80" rotation="0 120 0" width="8" height="7"></a-plane>
 <a-plane color="white" position="-56.5 11.5 80" rotation="0 120 0" width="10" height="1.8"></a-plane>
 <a-text value="Balkrishna Deshpande\nFather of Gangadharrao Deshpande" position="-56 11.5 80" rotation="0 120 0" align="center" width="12" color="black"></a-text>-->
-<a-plane src="procession.png" position="-56.5 16.5 80" rotation="0 120 0" width="10" height="8"></a-plane>
-<a-plane src="processionold.png" position="-62 16.5 70" rotation="0 120 0" width="10" height="8"></a-plane>
+<a-plane src="procession.png" position="-56.5 16 80" rotation="0 120 0" width="7" height="7"></a-plane>
+<a-plane src="processionold.png" position="-62 16 70" rotation="0 120 0" width="7" height="7"></a-plane>
 
-<a-plane src="bhave.png" position="-56.5 6.5 80" rotation="0 120 0" width="10" height="8"></a-plane>
-<a-plane src="bhaveold.jpeg" position="-62 6.5 70" rotation="0 120 0" width="10" height="8"></a-plane>
+<a-plane src="bhave.png" position="-56.5 7 80" rotation="0 120 0" width="7" height="7"></a-plane>
+<a-plane src="bhaveold.jpeg" position="-62 7 70" rotation="0 120 0" width="7" height="7"></a-plane>
+
 <!--<a-plane src="#mother" position="-56.5 6.5 80" rotation="0 120 0" width="8" height="7"></a-plane>
 <a-plane color="white" position="-56.5 1.5 80" rotation="0 120 0" width="10" height="1.8"></a-plane>
 <a-text value="Deshpande\nMother of Gangadharrao Deshpande" position="-56 1.5 80" rotation="0 120 0" align="center" width="12" color="black"></a-text>-->
@@ -761,50 +762,37 @@ material="roughness:1">
     </a-entity>
 <!--NAVIGATION POINTS-->
       <!-- 1st wall Teleport Pad -->
-      <a-cylinder position="0 0.05 75" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="0 0.05 75" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
       <!-- 2nd wall Teleport Pad -->
-      <a-cylinder position="-40 0.05 65" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="-50 0.05 45" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="-75 0.05 10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder> 
+      <a-cylinder position="-40 0.05 65" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-45 0.05 55" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-50 0.05 45" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-60 0.05 25" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-75 0.05 10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder> 
       <!-- 3rd wall Teleport Pad -->
-      <a-cylinder position="-60 0.05 -30" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="-45 0.05 -60" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="-70 0.05 -10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="-60 0.05 -30" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-50 0.05 -40" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-45 0.05 -60" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="-70 0.05 -10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
       <!--4th wall Teleport Pad -->
-      <a-cylinder position="0 0.05 -45" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="0 0.05 -45" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
       <!-- 5th wall Teleport Pad -->
-      <a-cylinder position="60 0.05 -30" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="45 0.05 -60" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="75 0.05 -10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="60 0.05 -30" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="50 0.05 -30" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="45 0.05 -60" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="75 0.05 -10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
       <!-- 6th wall Teleport Pad -->
-      <a-cylinder position="55 0.05 40" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="40 0.05 70" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="70 0.05 10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="55 0.05 40" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="40 0.05 70" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="60 0.05 20" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="70 0.05 10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
       <!--centre room Teleport Pad -->
-      <a-cylinder position="0 0.05 10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="0 0.05 10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
       <!-- Left Side Statue -->
-      <a-cylinder position="-35 0.05 -10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder> 
+      <a-cylinder position="-35 0.05 -10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder> 
       <!-- Right Side Statue -->
-      <a-cylinder position="35 0.05 -10" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
-      <a-cylinder position="0 0.05 60" radius="1" height="0.5" material="color: blue" teleport
-      class="clickable"></a-cylinder>
+      <a-cylinder position="35 0.05 -10" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
+      <a-cylinder position="0 0.05 60" radius="1" height="0.5" material="color: blue" teleport class="clickable"></a-cylinder>
 
 <!--MUSEUM WALLS-->
 <!-- WALL 1 (BACK SMALL WALL) -->
